@@ -16,8 +16,18 @@ colors = ['yellow', 'green']
 df['Wise'] = pd.to_numeric(df['Wise']).fillna(0).astype(bool)
 df['Wisdom Teeth Removed'] = pd.to_numeric(df['Wisdom Teeth Removed']).fillna(0).astype(bool)
 teethe = df['Wisdom Teeth Removed'].value_counts()
-plt.pie(teethe, colors=colors, labels=teethe, startangle=20)
+plt.pie(teethe.values, labels=teethe.index, colors=colors, startangle=20)
 plt.axis('equal')
 
 plt.title('Wisdom Teeth Removed')
+plt.legend()
 plt.savefig('wisepie.png', bbox_inches='tight')
+plt.close()
+
+
+xthing = df['Best Water Swim'] # y values
+ything = df['Flavor'] # x values
+plt.scatter(ything, xthing, cmap='RdPu')
+
+plt.savefig('scatter-flavorvision.png')
+plt.close()
