@@ -31,3 +31,9 @@ plt.scatter(ything, xthing, cmap='RdPu')
 
 plt.savefig('scatter-flavorvision.png')
 plt.close()
+
+xstuff = df['BigFive Neuroticism']
+ystuff = df['BigFive Agreeableness']
+plt.title('Neuroticism vs Agreeableness')
+plt.scatter(xstuff,ystuff)
+plt.savefig('maybe.png')
