@@ -37,3 +37,17 @@ ystuff = df['BigFive Agreeableness']
 plt.title('Neuroticism vs Agreeableness')
 plt.scatter(xstuff,ystuff)
 plt.savefig('maybe.png')
+plt.close()
+
+
+
+df[''] = pd.to_numeric(df['Wise']).fillna(0).astype(bool)
+df['Wisdom Teeth Removed'] = pd.to_numeric(df['Wisdom Teeth Removed']).fillna(0).astype(bool)
+teethe = df['Wisdom Teeth Removed'].value_counts()
+plt.pie(teethe.values, labels=teethe.index, colors=colors, startangle=20)
+plt.axis('equal')
+
+plt.title('Wisdom Teeth Removed')
+plt.legend()
+plt.savefig('wisepie.png', bbox_inches='tight')
+plt.close()
