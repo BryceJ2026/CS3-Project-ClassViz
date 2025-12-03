@@ -9,7 +9,7 @@ plt.style.use('seaborn-v0_8-pastel')
 df = pd.read_csv('classdatav1.csv')
 df = df.head(8)
 print(df.info())
-colors = ['yellow', 'green']
+colors = ['black', 'red', 'gold']
 
 # NOTE: some columns need data type converted (object -> boolean)
 
@@ -41,13 +41,12 @@ plt.close()
 
 
 
-df[''] = pd.to_numeric(df['Wise']).fillna(0).astype(bool)
-df['Wisdom Teeth Removed'] = pd.to_numeric(df['Wisdom Teeth Removed']).fillna(0).astype(bool)
-teethe = df['Wisdom Teeth Removed'].value_counts()
-plt.pie(teethe.values, labels=teethe.index, colors=colors, startangle=20)
+colorhuh = ['brown', 'black', 'gold']
+color = df['Hair Color'].value_counts()
+plt.pie(color.values, labels=color.index, colors=colorhuh, startangle=20)
 plt.axis('equal')
 
-plt.title('Wisdom Teeth Removed')
+plt.title('Hair color')
 plt.legend()
-plt.savefig('wisepie.png', bbox_inches='tight')
+plt.savefig('ANOTHERPIE.png', bbox_inches='tight')
 plt.close()
